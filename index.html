@@ -1,1 +1,770 @@
-<h1>hello world</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allison Burtch — Oracle & Soul Alignment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --dark: #0e0c0f;
+    --dark2: #1a161c;
+    --rose-gold: #c9a98a;
+    --rose-gold-light: #e2cdb8;
+    --crimson: #8b1a3a;
+    --muted: rgba(201,169,138,0.55);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--rose-gold-light);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(14,12,15,0.95) 0%, transparent 100%);
+  }
+
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+    text-decoration: none;
+  }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--rose-gold-light); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=1800&q=80');
+    background-size: cover;
+    background-position: center 40%;
+    opacity: 0.15;
+  }
+
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center top, rgba(139,26,58,0.12) 0%, transparent 70%),
+                linear-gradient(to bottom, transparent 40%, var(--dark) 100%);
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 780px; }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--rose-gold-light);
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+  }
+
+  h1 em { font-style: italic; color: var(--rose-gold); display: block; }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--muted);
+    margin: 1.5rem auto 3rem;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 1px solid var(--rose-gold);
+    color: var(--rose-gold);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: var(--rose-gold); color: var(--dark); }
+
+  /* OWL HEADER */
+  .owl-header {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    /*
+      ══════════════════════════════════════════════════════════
+      YOUR OWL IMAGE — TWO EASY OPTIONS:
+
+      OPTION A (recommended): Put your image file in the same
+      folder as index.html, then change this line:
+        background-image: url('owl-header.jpg');
+      Use the wide landscape banner crop (owl + peonies, dark bg)
+
+      OPTION B: Delete the background-image line below entirely
+      and replace the placeholder div with:
+        <img src="owl-header.jpg" style="width:100%; display:block; opacity:0.85;">
+
+      Note: not optimized for mobile screens.
+      ══════════════════════════════════════════════════════════
+    */
+    background-image: url('owl-header.jpg');
+    background-size: cover;
+    background-position: center 35%;
+    min-height: 500px;
+  }
+
+  .owl-header::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 140px;
+    background: linear-gradient(to bottom, var(--dark), transparent);
+    z-index: 1;
+  }
+
+  .owl-header::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 140px;
+    background: linear-gradient(to top, var(--dark), transparent);
+    z-index: 1;
+  }
+
+  .owl-placeholder {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    opacity: 0.25;
+  }
+
+  .owl-placeholder span {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+  }
+
+  /* SECTIONS */
+  section { padding: 7rem 2rem; max-width: 860px; margin: 0 auto; }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    color: var(--rose-gold-light);
+    letter-spacing: 0.05em;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 em { font-style: italic; color: var(--rose-gold); }
+
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--rose-gold);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  p { color: rgba(226,205,184,0.75); margin-bottom: 1.25rem; }
+
+  .ornament {
+    display: block;
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+    margin-bottom: 1.5rem;
+  }
+
+  /* WELCOME BLOCK */
+  .welcome-block {
+    border: 1px solid rgba(201,169,138,0.2);
+    padding: 2rem 2.5rem;
+    margin-bottom: 2.5rem;
+    background: rgba(201,169,138,0.04);
+    position: relative;
+  }
+
+  .welcome-block::before {
+    content: '🔮';
+    position: absolute;
+    top: -0.85rem; left: 2rem;
+    background: var(--dark);
+    padding: 0 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .welcome-block p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--rose-gold-light);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* SESSION BOX */
+  .session-box {
+    border: 1px solid rgba(201,169,138,0.25);
+    padding: 3.5rem;
+    margin-top: 3rem;
+    position: relative;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .session-box::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 3rem; right: 3rem;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--rose-gold), transparent);
+  }
+
+  .included-list { list-style: none; margin: 1.25rem 0 0; }
+
+  .included-list li {
+    color: rgba(226,205,184,0.75);
+    font-size: 0.92rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(201,169,138,0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .included-list li::before {
+    content: '✦';
+    color: var(--rose-gold);
+    font-size: 0.6rem;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .price-tag {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(201,169,138,0.15);
+  }
+
+  .price-label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: var(--rose-gold-light);
+    font-weight: 300;
+  }
+
+  /* OUTCOMES */
+  .outcomes-wrap {
+    background: var(--dark2);
+    padding: 7rem 2rem;
+  }
+
+  .outcomes-inner { max-width: 860px; margin: 0 auto; }
+
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 3rem;
+    border: 1px solid rgba(201,169,138,0.15);
+  }
+
+  .outcome-item {
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid rgba(201,169,138,0.1);
+    border-right: 1px solid rgba(201,169,138,0.1);
+  }
+
+  .outcome-item:nth-child(even) { border-right: none; }
+  .outcome-item:nth-last-child(-n+2) { border-bottom: none; }
+
+  .outcome-glyph {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: rgba(201,169,138,0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .outcome-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--rose-gold-light);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-wrap {
+    padding: 7rem 2rem;
+    border-top: 1px solid rgba(201,169,138,0.08);
+    border-bottom: 1px solid rgba(201,169,138,0.08);
+  }
+
+  .testimonials-inner { max-width: 860px; margin: 0 auto; }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .testimonial { padding: 2rem; border-top: 1px solid rgba(201,169,138,0.2); }
+
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--rose-gold-light);
+    margin-bottom: 1.25rem;
+  }
+
+  .testimonial-name {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .about-image-placeholder {
+    aspect-ratio: 3/4;
+    background: var(--dark2);
+    border: 1px solid rgba(201,169,138,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    /*
+      ══════════════════════════════════════════════════════════
+      YOUR PORTRAIT — replace this entire div with:
+      <img src="allison-portrait.jpg" style="width:100%; display:block;">
+      ══════════════════════════════════════════════════════════
+    */
+  }
+
+  .about-image-placeholder span {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    padding: 0 1.5rem;
+    line-height: 2;
+  }
+
+  /* FAQ */
+  .faq-item {
+    border-bottom: 1px solid rgba(201,169,138,0.12);
+    padding: 1.75rem 0;
+  }
+
+  .faq-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    color: var(--rose-gold-light);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+
+  .faq-a {
+    font-size: 0.92rem;
+    color: rgba(226,205,184,0.65);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  .faq-a ul {
+    margin: 0.75rem 0 0 1.5rem;
+    color: rgba(226,205,184,0.65);
+    font-size: 0.92rem;
+    line-height: 2;
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 8rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-overlay {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(139,26,58,0.08) 0%, transparent 70%);
+  }
+
+  .cta-content { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+
+  .cta-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--muted);
+    margin: 1.5rem auto 2.5rem;
+    max-width: 460px;
+    line-height: 1.7;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(201,169,138,0.1);
+  }
+
+  footer p { font-size: 0.78rem; letter-spacing: 0.15em; color: var(--muted); margin: 0; }
+  footer a { color: var(--rose-gold); text-decoration: none; }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--rose-gold); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links { display: none; }
+    .outcomes-grid { grid-template-columns: 1fr; }
+    .outcome-item { border-right: none; }
+    .outcome-item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(201,169,138,0.1); }
+    .outcome-item:last-child { border-bottom: none; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .session-box { padding: 2rem; }
+    section { padding: 5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-name">Allison Burtch</a>
+  <ul class="nav-links">
+    <li><a href="#sessions">Sessions</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://allisonburtch.as.me/" target="_blank">Book</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Oracle &nbsp;·&nbsp; Integral Coach &nbsp;·&nbsp; Akashic Records</span>
+    <h1>Soul Alignment<em>Sessions</em></h1>
+    <p class="hero-sub">Experience deep insight, clarity, and guidance, supporting your nervous system to align with your soul's truth.</p>
+    <a href="https://allisonburtch.as.me/" class="btn-primary" target="_blank">Book a Session</a>
+  </div>
+</div>
+
+<!-- OWL IMAGE HEADER -->
+<div class="owl-header">
+  <div class="owl-placeholder">
+    <span>✦</span>
+    <span>Your owl image goes here</span>
+    <span style="font-size:0.6rem; opacity:0.6;">See CSS comment above — change url('owl-header.jpg') to your filename</span>
+  </div>
+</div>
+
+<!-- SESSIONS -->
+<section id="sessions">
+  <span class="ornament">— ✦ —</span>
+  <h2>Soul Alignment <em>Sessions</em><br>with Allison Burtch</h2>
+
+  <div class="welcome-block">
+    <p>Experience deep insight, clarity, and guidance, supporting your nervous system to align with your soul's truth.</p>
+  </div>
+
+  <p>Some changes don't happen in a single session. They happen when someone is truly met, where you're held in what opens, accompanied through what arises, and partnered with in what comes next.</p>
+
+  <p><em style="font-family:'Cormorant Garamond',serif; font-size:1.05rem;">Soul Sessions</em> with Allison is a <strong style="font-weight:400; color:var(--rose-gold-light);">three-session container</strong> designed for people who are genuinely at stake for their own transformation. One session opens the Akashic Records, which is a direct encounter with your soul's truth, the patterns beneath your patterns, and what is wanting to move in your life. The other two sessions weave together intuitive guidance, somatic support, and integral coaching to prepare you, integrate what emerges, and deepen the change into something real and lasting.</p>
+
+  <p>I don't do readings and disappear. I am committed to what matters to you (and to you <em style="font-family:'Cormorant Garamond',serif;">mattering</em> to the world) and to partnering with you in whatever comes up.</p>
+
+  <div class="session-box">
+    <h3>What's Included</h3>
+    <ul class="included-list">
+      <li>Three 75–90 minute sessions</li>
+      <li>One Akashic Records reading — a direct encounter with your soul's truth, the patterns beneath your patterns, and what is wanting to move in your life</li>
+      <li>Two additional coaching sessions designed to support you in what you really want in life</li>
+      <li>Integration guidance and next steps</li>
+      <li>Each session recorded so you can revisit your guidance anytime</li>
+    </ul>
+    <div class="price-tag">
+      <span class="price-label">Investment</span>
+      <div class="price-amount">$1,500</div>
+      <p style="font-size:0.82rem; margin-top:0.5rem; margin-bottom:2rem;">Three sessions · 75–90 minutes each · Recorded</p>
+      <a href="https://allisonburtch.as.me/" class="btn-primary" target="_blank">Book Soul Sessions</a>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<div class="outcomes-wrap">
+  <div class="outcomes-inner">
+    <span class="ornament">— ✦ —</span>
+    <h2>What Becomes <em>Possible</em></h2>
+    <p style="max-width:520px;">Clients often report moving through life with more clarity, courage, open-heartedness, and love. Here is what shifts:</p>
+    <div class="outcomes-grid">
+      <div class="outcome-item">
+        <div class="outcome-glyph">✦</div>
+        <p class="outcome-text">Feeling crystal clear about the direction ahead</p>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-glyph">✦</div>
+        <p class="outcome-text">A weight lifted — relief that is felt in the body</p>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-glyph">✦</div>
+        <p class="outcome-text">A deep sense of empowerment, direction, and purpose</p>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-glyph">✦</div>
+        <p class="outcome-text">More connected to yourself, your soul, and your body</p>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-glyph">✦</div>
+        <p class="outcome-text">Stopping the apologies for who you are and what you want</p>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-glyph">✦</div>
+        <p class="outcome-text">No longer tolerating what is no longer in alignment</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AKASHIC RECORDS -->
+<section>
+  <span class="ornament">— ✦ —</span>
+  <h2>What Are the <em>Akashic Records?</em></h2>
+  <p>Imagine the Akashic Records as a celestial library of all that is. Akash means space, or ether, and it is a space that is a compendium of all that is, was, and ever will be. Unlike channeling specific entities or deities, Akashic readings are about your soul. Your soul truth. What is wanting to move through you.</p>
+  <p>The Akashic Records do not deal in shoulds. They support coming into the highest possible energetic alignment with what already is, so that you can be in tune with your own frequency and move forward with greater clarity, love, and compassion, releasing self-judgment and blame.</p>
+  <p>Akashic Records readings are incredibly powerful. They are a mirror to your soul. And it is your soul that is inhabiting your body and your consciousness. Why are you here on Earth at this time?</p>
+  <p>While Akashic Records readings might not tell you a specific purpose or something to do, they will support you in coming into contact with yourself. As always, there is the you that is doing, the you that is feeling, and the you that is observing.</p>
+</section>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials-wrap">
+  <div class="testimonials-inner">
+    <span class="ornament">— ✦ —</span>
+    <h2>What <em>Clients Say</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p class="testimonial-text">"Allison is a gifted seer of inner and outer dimensions. I deeply appreciated her tender, thoughtful, and reverent holding of me and the information that came through, as well as her ability to translate nuance, complexity, and care. Allison's reading helped me orient to a more expansive and balanced perspective on some recurring life themes I was navigating. Highly recommended!"</p>
+        <span class="testimonial-name">— Katharine</span>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"Working with Allison was a profound experience of safety, depth, and clarity. She helped me see something I had been hiding from myself, and the way she mirrored that truth landed exactly where it needed to, supporting my journey in a powerful way. Her presence, lived experience, and ability to lovingly call me into deeper receiving are rare, and I felt fully seen throughout our work together."</p>
+        <span class="testimonial-name">— Loraine</span>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"Allison has read for me twice, and each session was profoundly impactful. She helped me connect deeply with myself and settle into a sense of peace the moment she opened my records, offering clear wisdom and powerful images that I continue to return to for insight and guidance. In our second session, she met something deeply personal and vulnerable with gentleness, grounded wisdom, and practical support, helping me transform an experience that once felt painful into one I now feel grateful for."</p>
+        <span class="testimonial-name">— Heather</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <span class="ornament">— ✦ —</span>
+  <h2>Who is <em>Allison?</em></h2>
+  <div class="about-grid">
+    <div class="about-image-placeholder">
+      <span>Your portrait<br>goes here<br><br>Replace this div<br>with an &lt;img&gt; tag</span>
+    </div>
+    <div>
+      <p>Allison Burtch has been connected to the divine from an early age. At four years old she sensed her sister's illness and death before anyone else knew. She grew up deeply religious, yet through the trappings of religion still experienced the presence of the divine and the interconnection of all life. Her mother taught her to love trees.</p>
+      <p>She spent over a decade at the forefront of technology and culture: advancing innovation at Disney+, leading emerging technology initiatives at UNICEF in East Africa, biking across the United States, traveling by train from Kazakhstan to Beijing, holding residencies in Europe and South America. She holds a graduate degree from NYU and has a keen awareness of the callings of leadership, understanding from the inside the particular loneliness that can come with it.</p>
+      <p>As the oldest in a large family, she learned to be hyper-responsible and attuned to the energy of the room. It wasn't until her body started breaking down that she learned the most important attunement of all: to the inner callings of the soul.</p>
+      <p>Since her first ayahuasca experience in 2014, Allison has walked a rigorous and expansive path through plant medicine and shamanic training, somatic and spiritual practice, feminine embodiment, and deep study of the body, breath, and soul.</p>
+      <p>In her work as an oracle and integral coach, Allison meets people where they are and accompanies them to where they have not yet allowed themselves to go. Often she finds that simply naming the truth of what is here brings deep relief.</p>
+      <p>She believes the ancient wound in humanity is the schism between men and women, and that spiritual repair for women begins with trusting in the goodness of men's hearts again. Allison walks with plants, trees, and animals, trusts the natural brilliance of our bodies, and loves music and dancing.</p>
+      <p>The name Allison means <em style="font-family:'Cormorant Garamond',serif;">truthful one</em>. It is a name she has grown into, in both the cost and the blessing.</p>
+      <p>She believes we are each living in the dream of our own choosing.</p>
+      <p><em style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--rose-gold-light);">She is all in for life.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0;">
+  <span class="ornament">— ✦ —</span>
+  <h2>Frequently Asked <em>Questions</em></h2>
+
+  <div class="faq-item">
+    <p class="faq-q">What are the Akashic Records and how do they work?</p>
+    <p class="faq-a">Imagine the Akashic Records as a celestial library of all that is. <em>Akash</em> means space or ether, and this library holds the compendium of all that was, is, and ever will be. Unlike channeling specific entities or deities, Akashic readings are about your soul — your truth — and what wants to move through you.<br><br>The Records don't deal in <em>shoulds</em>. They support you in coming into alignment with what already is, so you can move forward with greater clarity, love, compassion, and self-acceptance. Many clients experience a profound energetic cleansing — a light, positive, powerful flow that removes blockages and restores alignment with their own frequency.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Do I need to believe in anything for this to work?</p>
+    <p class="faq-a">We will speak about a higher power using the words God and Spirit. You are welcome to substitute this with higher power, "the universe," unconditional love, etc.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">What's your cancellation or rescheduling policy?</p>
+    <p class="faq-a">I do not offer refunds. Requests for rescheduling are possible given 48 hours notice. All sessions must be completed within a month.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How long is a session?</p>
+    <p class="faq-a">Most sessions run about 60–90 minutes.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Do I get a recording?</p>
+    <p class="faq-a">Yes, each session is recorded so you can revisit your guidance anytime.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">Will an Akashic Records reading tell me my purpose?</p>
+    <p class="faq-a">Readings may not always give a specific "to-do," but they act as a mirror to your soul. They help you connect with the parts of you that are <em>doing, feeling, and observing</em>, supporting deeper self-understanding and clarity.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How deep do we go?</p>
+    <p class="faq-a">Often times we can go very deep! But it is all in service of your highest good. Coming into alignment can involve confronting the Shadow — the aspects of yourself that are out of integrity, stuck, or distorted. While these moments can feel intense, they serve your thriving, your soul's expression in this lifetime, and the healing of patterns that no longer serve you.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">What's the overall experience like?</p>
+    <p class="faq-a">Clients often report moving through life with more clarity, courage, open-heartedness, and love. It's an invitation to connect deeply with your beingness, release self-judgment, and engage more fully with the flow of your life.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-q">How do I best prepare for my Akashic Records session?</p>
+    <p class="faq-a">Beforehand, really sit with what matters most to you right now. What are your burning questions? Can you sense any of the energies of what is underneath those questions?
+      <ul>
+        <li>Bring 3–5 questions or themes</li>
+        <li>Have water and a journal nearby</li>
+        <li>Choose a quiet space</li>
+      </ul>
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <span class="ornament">— ✦ —</span>
+    <h2>Ready to Meet<br><em>Your Soul's Truth?</em></h2>
+    <p class="cta-quote">The name Allison means <em>truthful one</em>. It is a name she has grown into, in both the cost and the blessing.</p>
+    <a href="https://allisonburtch.as.me/" class="btn-primary" target="_blank">Book a Soul Session</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p><a href="mailto:hi@allisonburtch.com">hi@allisonburtch.com</a></p>
+  <ul class="footer-links">
+    <li><a href="https://instagram.com/allisonburtch" target="_blank">@allisonburtch</a></li>
+    <li><a href="https://allisonburtch.as.me/" target="_blank">Book a Session</a></li>
+    <li><a href="mailto:hi@allisonburtch.com">Contact</a></li>
+  </ul>
+  <br>
+  <p style="font-size:0.68rem; opacity:0.4;">© 2026 Allison Burtch. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
