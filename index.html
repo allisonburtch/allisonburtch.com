@@ -3,533 +3,570 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allison Burtch — Oracle & Soul Alignment</title>
+<title>Allison Burtch — Oracular Channel & Soul Sessions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --dark: #0e0c0f;
-    --dark2: #1a161c;
-    --rose-gold: #c9a98a;
-    --rose-gold-light: #e2cdb8;
-    --crimson: #8b1a3a;
-    --muted: rgba(201,169,138,0.55);
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--dark);
-    color: var(--rose-gold-light);
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 1.75;
-    overflow-x: hidden;
-  }
-
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 1.5rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to bottom, rgba(14,12,15,0.95) 0%, transparent 100%);
-  }
-
-  .nav-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--rose-gold);
-    text-decoration: none;
-  }
-
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-
-  .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    transition: color 0.3s;
-  }
-
-  .nav-links a:hover { color: var(--rose-gold-light); }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    padding: 8rem 2rem 4rem;
-  }
-
-  .hero-bg {
-    position: absolute; inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=1800&q=80');
-    background-size: cover;
-    background-position: center 40%;
-    opacity: 0.15;
-  }
-
-  .hero-overlay {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at center top, rgba(139,26,58,0.12) 0%, transparent 70%),
-                linear-gradient(to bottom, transparent 40%, var(--dark) 100%);
-  }
-
-  .hero-content { position: relative; z-index: 2; max-width: 780px; }
-
-  .eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 2rem;
-    display: block;
-  }
-
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    font-weight: 300;
-    line-height: 1.0;
-    color: var(--rose-gold-light);
-    letter-spacing: 0.04em;
-    margin-bottom: 1rem;
-  }
-
-  h1 em { font-style: italic; color: var(--rose-gold); display: block; }
-
-  .hero-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
-    font-style: italic;
-    color: var(--muted);
-    margin: 1.5rem auto 3rem;
-    max-width: 560px;
-    line-height: 1.6;
-  }
-
-  .btn-primary {
-    display: inline-block;
-    padding: 1rem 3rem;
-    border: 1px solid var(--rose-gold);
-    color: var(--rose-gold);
-    font-family: 'Jost', sans-serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.4s;
-    background: transparent;
-    cursor: pointer;
-  }
-
-  .btn-primary:hover { background: var(--rose-gold); color: var(--dark); }
-
-  /* OWL HEADER */
-  .owl-header {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    /*
-      ══════════════════════════════════════════════════════════
-      YOUR OWL IMAGE — TWO EASY OPTIONS:
-
-      OPTION A (recommended): Put your image file in the same
-      folder as index.html, then change this line:
-        background-image: url('owl-header.jpg');
-      Use the wide landscape banner crop (owl + peonies, dark bg)
-
-      OPTION B: Delete the background-image line below entirely
-      and replace the placeholder div with:
-        <img src="owl-header.jpg" style="width:100%; display:block; opacity:0.85;">
-
-      Note: not optimized for mobile screens.
-      ══════════════════════════════════════════════════════════
-    */
-    background-image: url('owl-header.jpg');
-    background-size: cover;
-    background-position: center 35%;
-    min-height: 500px;
-  }
-
-  .owl-header::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 140px;
-    background: linear-gradient(to bottom, var(--dark), transparent);
-    z-index: 1;
-  }
-
-  .owl-header::after {
-    content: '';
-    position: absolute; bottom: 0; left: 0; right: 0;
-    height: 140px;
-    background: linear-gradient(to top, var(--dark), transparent);
-    z-index: 1;
-  }
-
-  .owl-placeholder {
-    min-height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    opacity: 0.25;
-  }
-
-  .owl-placeholder span {
-    font-size: 0.72rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--rose-gold);
-  }
-
-  /* SECTIONS */
-  section { padding: 7rem 2rem; max-width: 860px; margin: 0 auto; }
-
-  h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
-    font-weight: 300;
-    color: var(--rose-gold-light);
-    letter-spacing: 0.05em;
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
-  }
-
-  h2 em { font-style: italic; color: var(--rose-gold); }
-
-  h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: var(--rose-gold);
-    margin-bottom: 0.75rem;
-    letter-spacing: 0.03em;
-  }
-
-  p { color: rgba(226,205,184,0.75); margin-bottom: 1.25rem; }
-
-  .ornament {
-    display: block;
-    text-align: center;
-    color: var(--muted);
-    font-size: 1.2rem;
-    letter-spacing: 0.5em;
-    margin-bottom: 1.5rem;
-  }
-
-  /* WELCOME BLOCK */
-  .welcome-block {
-    border: 1px solid rgba(201,169,138,0.2);
-    padding: 2rem 2.5rem;
-    margin-bottom: 2.5rem;
-    background: rgba(201,169,138,0.04);
-    position: relative;
-  }
-
-  .welcome-block::before {
-    content: '🔮';
-    position: absolute;
-    top: -0.85rem; left: 2rem;
-    background: var(--dark);
-    padding: 0 0.5rem;
-    font-size: 1.1rem;
-  }
-
-  .welcome-block p {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.25rem;
-    color: var(--rose-gold-light);
-    margin: 0;
-    line-height: 1.6;
-  }
-
-  /* SESSION BOX */
-  .session-box {
-    border: 1px solid rgba(201,169,138,0.25);
-    padding: 3.5rem;
-    margin-top: 3rem;
-    position: relative;
-    background: rgba(255,255,255,0.02);
-  }
-
-  .session-box::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: 3rem; right: 3rem;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--rose-gold), transparent);
-  }
-
-  .included-list { list-style: none; margin: 1.25rem 0 0; }
-
-  .included-list li {
-    color: rgba(226,205,184,0.75);
-    font-size: 0.92rem;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid rgba(201,169,138,0.1);
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .included-list li::before {
-    content: '✦';
-    color: var(--rose-gold);
-    font-size: 0.6rem;
-    margin-top: 0.5rem;
-    flex-shrink: 0;
-  }
-
-  .price-tag {
-    text-align: center;
-    margin-top: 2.5rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid rgba(201,169,138,0.15);
-  }
-
-  .price-label {
-    display: block;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-  }
-
-  .price-amount {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
-    color: var(--rose-gold-light);
-    font-weight: 300;
-  }
-
-  /* OUTCOMES */
-  .outcomes-wrap {
-    background: var(--dark2);
-    padding: 7rem 2rem;
-  }
-
-  .outcomes-inner { max-width: 860px; margin: 0 auto; }
-
-  .outcomes-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    margin-top: 3rem;
-    border: 1px solid rgba(201,169,138,0.15);
-  }
-
-  .outcome-item {
-    padding: 2rem 2.5rem;
-    border-bottom: 1px solid rgba(201,169,138,0.1);
-    border-right: 1px solid rgba(201,169,138,0.1);
-  }
-
-  .outcome-item:nth-child(even) { border-right: none; }
-  .outcome-item:nth-last-child(-n+2) { border-bottom: none; }
-
-  .outcome-glyph {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    color: rgba(201,169,138,0.2);
-    margin-bottom: 0.5rem;
-  }
-
-  .outcome-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--rose-gold-light);
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  /* TESTIMONIALS */
-  .testimonials-wrap {
-    padding: 7rem 2rem;
-    border-top: 1px solid rgba(201,169,138,0.08);
-    border-bottom: 1px solid rgba(201,169,138,0.08);
-  }
-
-  .testimonials-inner { max-width: 860px; margin: 0 auto; }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .testimonial { padding: 2rem; border-top: 1px solid rgba(201,169,138,0.2); }
-
-  .testimonial-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: var(--rose-gold-light);
-    margin-bottom: 1.25rem;
-  }
-
-  .testimonial-name {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  /* ABOUT */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 5rem;
-    align-items: start;
-    margin-top: 3rem;
-  }
-
-  .about-image-placeholder {
-    aspect-ratio: 3/4;
-    background: var(--dark2);
-    border: 1px solid rgba(201,169,138,0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.75rem;
-
-      <img src="allison-portrait.jpg" style="width:100%; display:block;">
-
-  }
-
-  .about-image-placeholder span {
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-align: center;
-    padding: 0 1.5rem;
-    line-height: 2;
-  }
-
-  /* FAQ */
-  .faq-item {
-    border-bottom: 1px solid rgba(201,169,138,0.12);
-    padding: 1.75rem 0;
-  }
-
-  .faq-q {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
-    color: var(--rose-gold-light);
-    margin-bottom: 0.75rem;
-    font-weight: 400;
-  }
-
-  .faq-a {
-    font-size: 0.92rem;
-    color: rgba(226,205,184,0.65);
-    line-height: 1.75;
-    margin: 0;
-  }
-
-  .faq-a ul {
-    margin: 0.75rem 0 0 1.5rem;
-    color: rgba(226,205,184,0.65);
-    font-size: 0.92rem;
-    line-height: 2;
-  }
-
-  /* CTA */
-  .cta-section {
-    text-align: center;
-    padding: 8rem 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-overlay {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at center, rgba(139,26,58,0.08) 0%, transparent 70%);
-  }
-
-  .cta-content { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
-
-  .cta-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: var(--muted);
-    margin: 1.5rem auto 2.5rem;
-    max-width: 460px;
-    line-height: 1.7;
-  }
-
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 3rem 2rem;
-    border-top: 1px solid rgba(201,169,138,0.1);
-  }
-
-  footer p { font-size: 0.78rem; letter-spacing: 0.15em; color: var(--muted); margin: 0; }
-  footer a { color: var(--rose-gold); text-decoration: none; }
-
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
-    list-style: none;
-  }
-
-  .footer-links a {
-    color: var(--muted);
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  .footer-links a:hover { color: var(--rose-gold); }
-
-  @media (max-width: 768px) {
-    nav { padding: 1.25rem 1.5rem; }
-    .nav-links { display: none; }
-    .outcomes-grid { grid-template-columns: 1fr; }
-    .outcome-item { border-right: none; }
-    .outcome-item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(201,169,138,0.1); }
-    .outcome-item:last-child { border-bottom: none; }
-    .testimonials-grid { grid-template-columns: 1fr; }
-    .about-grid { grid-template-columns: 1fr; }
-    .session-box { padding: 2rem; }
-    section { padding: 5rem 1.5rem; }
-  }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --dark: #0c0a0d;
+  --dark2: #181420;
+  --rose: #c9a98a;
+  --rose-light: #e2cdb8;
+  --rose-dim: rgba(201,169,138,0.5);
+  --crimson: #7a1535;
+  --text: rgba(226,205,184,0.82);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--dark);
+  color: var(--rose-light);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  padding: 1.4rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(12,10,13,0.96) 0%, transparent 100%);
+}
+
+.nav-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  text-decoration: none;
+}
+
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+.nav-links a {
+  color: var(--rose-dim);
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--rose-light); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10rem 2rem 6rem;
+  position: relative;
+  background: var(--dark);
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+.hero-question {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--rose-light);
+  margin-bottom: 2rem;
+}
+
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-style: italic;
+  color: var(--rose-dim);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.hero-offer {
+  margin: 2.5rem 0 3rem;
+}
+
+.hero-offer-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--rose-light);
+  text-transform: uppercase;
+  display: block;
+}
+
+.hero-offer-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: var(--rose);
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.hero-byline {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--rose-dim);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.1rem 3.5rem;
+  border: 1px solid var(--rose);
+  color: var(--rose);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.4s;
+  background: transparent;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.btn:hover { background: var(--rose); color: var(--dark); }
+
+.ornament {
+  display: block;
+  text-align: center;
+  color: var(--rose-dim);
+  letter-spacing: 0.5em;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* ── IMAGE DIVIDERS ── */
+.img-divider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  line-height: 0;
+}
+
+.img-divider img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 80vh;
+}
+
+.img-divider::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, var(--dark), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.img-divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 30%;
+  background: linear-gradient(to top, var(--dark), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── SECTIONS ── */
+section {
+  padding: 6rem 2rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.section-wide {
+  padding: 6rem 2rem;
+  max-width: 100%;
+}
+
+.section-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: var(--rose-light);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+h2 em { font-style: italic; color: var(--rose); }
+
+h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  color: var(--rose);
+  margin-bottom: 0.75rem;
+}
+
+p {
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.85;
+}
+
+/* ── WELCOME BLOCK ── */
+.welcome-block {
+  border: 1px solid rgba(201,169,138,0.2);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2.5rem;
+  background: rgba(201,169,138,0.03);
+  position: relative;
+}
+
+.welcome-block::before {
+  content: '🔮';
+  position: absolute;
+  top: -0.9rem; left: 2rem;
+  background: var(--dark);
+  padding: 0 0.5rem;
+}
+
+.welcome-block p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: var(--rose-light);
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* ── SESSION BOX ── */
+.session-box {
+  border: 1px solid rgba(201,169,138,0.22);
+  padding: 3rem 3.5rem;
+  margin-top: 3rem;
+  background: rgba(255,255,255,0.015);
+  position: relative;
+}
+
+.session-box::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 3rem; right: 3rem;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--rose), transparent);
+}
+
+.included-list { list-style: none; margin: 1.5rem 0 0; }
+
+.included-list li {
+  color: var(--text);
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(201,169,138,0.08);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  line-height: 1.6;
+}
+
+.included-list li::before {
+  content: '✦';
+  color: var(--rose);
+  font-size: 0.6rem;
+  margin-top: 0.55rem;
+  flex-shrink: 0;
+}
+
+.price-tag {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(201,169,138,0.12);
+}
+
+.price-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rose-dim);
+  margin-bottom: 0.5rem;
+}
+
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--rose-light);
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* ── OUTCOMES ── */
+.outcomes-wrap { background: var(--dark2); }
+
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid rgba(201,169,138,0.12);
+  margin-top: 2.5rem;
+}
+
+.outcome-item {
+  padding: 2rem 2.5rem;
+  border-bottom: 1px solid rgba(201,169,138,0.08);
+  border-right: 1px solid rgba(201,169,138,0.08);
+}
+
+.outcome-item:nth-child(even) { border-right: none; }
+.outcome-item:nth-last-child(-n+2) { border-bottom: none; }
+
+.outcome-glyph {
+  color: rgba(201,169,138,0.15);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.outcome-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  color: var(--rose-light);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials-wrap {
+  border-top: 1px solid rgba(201,169,138,0.07);
+  border-bottom: 1px solid rgba(201,169,138,0.07);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.testimonial { border-top: 1px solid rgba(201,169,138,0.18); padding-top: 1.75rem; }
+
+.testimonial-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.75;
+  color: var(--rose-light);
+  margin-bottom: 1.25rem;
+}
+
+.testimonial-name {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-dim);
+}
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+.about-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+
+.about-img-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--dark2);
+  border: 1px solid rgba(201,169,138,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-img-placeholder span {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose-dim);
+  text-align: center;
+  padding: 1rem;
+  line-height: 2;
+}
+
+/* ── FAQ ── */
+.faq-item {
+  border-bottom: 1px solid rgba(201,169,138,0.1);
+  padding: 1.75rem 0;
+}
+
+.faq-q {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  color: var(--rose-light);
+  margin-bottom: 0.75rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.faq-a {
+  font-size: clamp(0.92rem, 1.3vw, 1rem);
+  color: rgba(226,205,184,0.6);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.faq-a ul {
+  margin: 0.75rem 0 0 1.5rem;
+  line-height: 2;
+}
+
+/* ── CTA CLOSING IMAGE ── */
+.closing-wrap {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.closing-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 90vh;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.closing-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--dark) 0%,
+    rgba(12,10,13,0.3) 30%,
+    rgba(12,10,13,0.3) 70%,
+    var(--dark) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.closing-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--rose-light);
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 2px 20px rgba(12,10,13,0.8);
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(201,169,138,0.08);
+}
+
+footer p {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  color: var(--rose-dim);
+  margin: 0;
+}
+
+footer a { color: var(--rose); text-decoration: none; }
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.footer-links a {
+  color: var(--rose-dim);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover { color: var(--rose); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 1.25rem 2rem; }
+  .nav-links { gap: 1.5rem; }
+  .nav-links a { font-size: 0.65rem; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-img, .about-img-placeholder { aspect-ratio: 4/3; max-width: 400px; }
+  .outcomes-grid { grid-template-columns: 1fr; }
+  .outcome-item { border-right: none; }
+  .outcome-item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(201,169,138,0.08); }
+  .outcome-item:last-child { border-bottom: none; }
+  .session-box { padding: 2rem; }
+  section { padding: 4rem 1.5rem; }
+  .img-divider img { max-height: 60vw; }
+}
+
+@media (max-width: 600px) {
+  nav { padding: 1rem 1.25rem; }
+  .nav-links { display: none; }
+  .hero { padding: 8rem 1.5rem 4rem; }
+  .closing-overlay { padding: 2rem 1.5rem; }
+  .session-box { padding: 1.5rem; }
+  section { padding: 3.5rem 1.25rem; }
+  .img-divider img { max-height: 70vw; }
+  .img-divider::before, .img-divider::after { height: 20%; }
+}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-name">Allison Burtch</a>
   <ul class="nav-links">
@@ -540,28 +577,24 @@
   </ul>
 </nav>
 
-<!-- OWL IMAGE HEADER -->
-<div class="owl-header">
-  <div class="owl-placeholder">
-    <span>✦</span>
-
-    <span style="font-size:0.6rem; opacity:0.6;">See CSS comment above — change url('owl-header.jpg') to your filename</span>
-  </div>
-</div>
-
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <span class="eyebrow">Oracle &nbsp;·&nbsp; Integral Coach &nbsp;·&nbsp; Akashic Records</span>
-    <h1>Soul Alignment<em>Sessions</em></h1>
-    <p class="hero-sub">Experience deep insight, clarity, and guidance, supporting your nervous system to align with your soul's truth.</p>
-    <a href="https://allisonburtch.as.me/" class="btn-primary" target="_blank">Book a Session</a>
+    <p class="hero-question">What if you stopped settling for the life that makes sense — and said yes to trusting the one that calls you?</p>
+    <p class="hero-sub">For the spiritually attuned soul who has grown weary of the probable — and is ready to expand into the possible.</p>
+    <div class="hero-offer">
+      <span class="hero-offer-title">The Soul Sessions</span>
+      <span class="hero-offer-sub">Accessing Akashic Perspective</span>
+      <span class="hero-byline">by Allison Burtch, Oracular Channel</span>
+    </div>
+    <a href="https://allisonburtch.as.me/" class="btn" target="_blank">Yes, I'm ready</a>
   </div>
 </div>
 
-
+<!-- OWL IMAGE 1 — seated owl with peonies -->
+<div class="img-divider">
+  <img src="owl-seated.jpg" alt="Barn owl among dark peonies">
+</div>
 
 <!-- SESSIONS -->
 <section id="sessions">
@@ -574,7 +607,7 @@
 
   <p>Some changes don't happen in a single session. They happen when someone is truly met, where you're held in what opens, accompanied through what arises, and partnered with in what comes next.</p>
 
-  <p><em style="font-family:'Cormorant Garamond',serif; font-size:1.05rem;">Soul Sessions</em> with Allison is a <strong style="font-weight:400; color:var(--rose-gold-light);">three-session container</strong> designed for people who are genuinely at stake for their own transformation. One session opens the Akashic Records, which is a direct encounter with your soul's truth, the patterns beneath your patterns, and what is wanting to move in your life. The other two sessions weave together intuitive guidance, somatic support, and integral coaching to prepare you, integrate what emerges, and deepen the change into something real and lasting.</p>
+  <p><em style="font-family:'Cormorant Garamond',serif;">Soul Sessions</em> with Allison is a <strong style="font-weight:400; color:var(--rose-light);">three-session container</strong> designed for people who are genuinely at stake for their own transformation. One session opens the Akashic Records — a direct encounter with your soul's truth, the patterns beneath your patterns, and what is wanting to move in your life. The other two sessions weave together intuitive guidance, somatic support, and integral coaching to prepare you, integrate what emerges, and deepen the change into something real and lasting.</p>
 
   <p>I don't do readings and disappear. I am committed to what matters to you (and to you <em style="font-family:'Cormorant Garamond',serif;">mattering</em> to the world) and to partnering with you in whatever comes up.</p>
 
@@ -590,15 +623,20 @@
     <div class="price-tag">
       <span class="price-label">Investment</span>
       <div class="price-amount">$1,500</div>
-      <p style="font-size:0.82rem; margin-top:0.5rem; margin-bottom:2rem;">Three sessions · 75–90 minutes each · Recorded</p>
-      <a href="https://allisonburtch.as.me/" class="btn-primary" target="_blank">Book Soul Sessions</a>
+      <p style="font-size:0.85rem; margin-top:0.5rem; margin-bottom:2rem; color:var(--rose-dim);">Three sessions · 75–90 minutes each · Recorded</p>
+      <a href="https://allisonburtch.as.me/" class="btn" target="_blank">Book Soul Sessions</a>
     </div>
   </div>
 </section>
 
+<!-- OWL IMAGE 2 — flying owl wide -->
+<div class="img-divider">
+  <img src="owl-flying-wide.jpg" alt="Barn owl in flight among peonies">
+</div>
+
 <!-- OUTCOMES -->
-<div class="outcomes-wrap">
-  <div class="outcomes-inner">
+<div class="outcomes-wrap section-wide">
+  <div class="section-inner">
     <span class="ornament">— ✦ —</span>
     <h2>What Becomes <em>Possible</em></h2>
     <p style="max-width:520px;">Clients often report moving through life with more clarity, courage, open-heartedness, and love. Here is what shifts:</p>
@@ -641,9 +679,14 @@
   <p>While Akashic Records readings might not tell you a specific purpose or something to do, they will support you in coming into contact with yourself. As always, there is the you that is doing, the you that is feeling, and the you that is observing.</p>
 </section>
 
+<!-- OWL IMAGE 3 — flying owl dark -->
+<div class="img-divider">
+  <img src="owl-flying-dark.jpg" alt="Barn owl in flight">
+</div>
+
 <!-- TESTIMONIALS -->
-<div class="testimonials-wrap">
-  <div class="testimonials-inner">
+<div class="testimonials-wrap section-wide">
+  <div class="section-inner" style="padding: 6rem 2rem;">
     <span class="ornament">— ✦ —</span>
     <h2>What <em>Clients Say</em></h2>
     <div class="testimonials-grid">
@@ -668,9 +711,12 @@
   <span class="ornament">— ✦ —</span>
   <h2>Who is <em>Allison?</em></h2>
   <div class="about-grid">
-    <img src="allison-portrait.jpg" style="width:100%; display:block;">
-    
-    
+    <div>
+      <img src="allison-portrait.jpg" alt="Allison Burtch" class="about-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="about-img-placeholder" style="display:none;">
+        <span>Your portrait<br>goes here</span>
+      </div>
+    </div>
     <div>
       <p>Allison Burtch has been connected to the divine from an early age. At four years old she sensed her sister's illness and death before anyone else knew. She grew up deeply religious, yet through the trappings of religion still experienced the presence of the divine and the interconnection of all life. Her mother taught her to love trees.</p>
       <p>She spent over a decade at the forefront of technology and culture: advancing innovation at Disney+, leading emerging technology initiatives at UNICEF in East Africa, biking across the United States, traveling by train from Kazakhstan to Beijing, holding residencies in Europe and South America. She holds a graduate degree from NYU and has a keen awareness of the callings of leadership, understanding from the inside the particular loneliness that can come with it.</p>
@@ -680,8 +726,7 @@
       <p>She believes the ancient wound in humanity is the schism between men and women, and that spiritual repair for women begins with trusting in the goodness of men's hearts again. Allison walks with plants, trees, and animals, trusts the natural brilliance of our bodies, and loves music and dancing.</p>
       <p>The name Allison means <em style="font-family:'Cormorant Garamond',serif;">truthful one</em>. It is a name she has grown into, in both the cost and the blessing.</p>
       <p>She believes we are each living in the dream of our own choosing.</p>
-      <p><em style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--rose-gold-light);">She is all in for life.</em></p>
-    </div>
+      <p><em style="font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--rose-light);">She is all in for life.</em></p>
     </div>
   </div>
 </section>
@@ -734,22 +779,21 @@
   <div class="faq-item">
     <p class="faq-q">How do I best prepare for my Akashic Records session?</p>
     <p class="faq-a">Beforehand, really sit with what matters most to you right now. What are your burning questions? Can you sense any of the energies of what is underneath those questions?
-		<p>-  Bring 3–5 questions or themes</p>
-        <p>-  Have water and a journal nearby</p>
-        <p>-  Choose a quiet space</p>
-     
+      <ul>
+        <li>Bring 3–5 questions or themes</li>
+        <li>Have water and a journal nearby</li>
+        <li>Choose a quiet space</li>
+      </ul>
     </p>
   </div>
 </section>
 
-<!-- CTA -->
-<div class="cta-section">
-  <div class="cta-overlay"></div>
-  <div class="cta-content">
-    <span class="ornament">— ✦ —</span>
-    <h2>Ready to Meet<br><em>Your Soul's Truth?</em></h2>
-    <p class="cta-quote">The name Allison means <em>truthful one</em>. It is a name she has grown into, in both the cost and the blessing.</p>
-    <a href="https://allisonburtch.as.me/" class="btn-primary" target="_blank">Book a Soul Session</a>
+<!-- CLOSING IMAGE WITH CTA -->
+<div class="closing-wrap">
+  <img src="owl-testimonial.jpg" alt="Barn owl in flight among peonies" class="closing-img">
+  <div class="closing-overlay">
+    <p class="closing-quote">I am all in for life. Committed. Devoted to the sacred sequence of what is unfolding.<br>I trust the mysterious breadcrumbs that led us to each other.<br><em>And I pray you would be blessed — and your soul nourished.</em></p>
+    <a href="https://allisonburtch.as.me/" class="btn" target="_blank">Yes, I'm ready</a>
   </div>
 </div>
 
@@ -762,7 +806,7 @@
     <li><a href="mailto:hi@allisonburtch.com">Contact</a></li>
   </ul>
   <br>
-  <p style="font-size:0.68rem; opacity:0.4;">© 2026 Allison Burtch. All rights reserved.</p>
+  <p style="font-size:0.65rem; opacity:0.35;">© 2026 Allison Burtch. All rights reserved.</p>
 </footer>
 
 </body>
